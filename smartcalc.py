@@ -1,21 +1,27 @@
 # SmartCalc Solutions - Modular Calculator
 # Author: Kasper Kanarek
 # Version: 1.0 - Final version
-# Features: Addition, Subtraction, Multiplication, Division, Power, Modulo 
+# Features: Addition, Subtraction, Multiplication, Division, Power, Modulo, Square Root
+import math
+
 # Addition function - adds two numbers and returns the result
 def add(a, b):
     return a + b
+
 # Subtraction function - subtracts b from a and returns the result
 def subtract(a, b):
     return a - b
+
 # Multiplication function - multiplies two numbers and returns the result
 def multiply(a, b):
     return a * b
+
 # Division function - divides a by b, prevents division by zero
 def divide(a, b):
     if b == 0:
         return "Error: division by zero"
     return a / b
+
 # Power function - raises a to the power of b
 def power(a, b):
     return a ** b
@@ -23,6 +29,12 @@ def power(a, b):
 # Modulo function - returns remainder of a divided by b
 def modulo(a, b):
     return a % b
+
+# Square root function - returns square root of a
+def square_root(a):
+    if a < 0:
+        return "Error: cannot calculate square root of negative number"
+    return math.sqrt(a)
 
 # Main menu - handles user interaction and calls appropriate functions
 def menu():
@@ -34,11 +46,12 @@ def menu():
         print("4. Division")
         print("5. Power")
         print("6. Modulo")
-        print("7. Exit")
+        print("7. Square Root")
+        print("8. Exit")
 
         choice = input("Enter your choice: ")
 
-        if choice == "7":
+        if choice == "8":
             print("Exiting calculator...")
             break
 
@@ -57,6 +70,8 @@ def menu():
             print("Result:", power(a, b))
         elif choice == "6":
             print("Result:", modulo(a, b))
+        elif choice == "7":
+            print("Result:", square_root(a))
         else:
             print("Invalid choice. Please try again")
 
