@@ -6,3 +6,6 @@ def add(a, b):
 # Subtraction function - subtracts b from a and returns the result
 def subtract(a, b):
     return a - b
+# Multiplication function - multiplies two numbers and returns the result
+def multiply(a, b):
+    return a * b
